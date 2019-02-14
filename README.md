@@ -1,7 +1,7 @@
 
 # Running the exercise
 
-The script in this directory (`alignment.sh`) should run on its own as long as you create a directory for it called `/data/eeb723-seqaln`. However, we recommend that you open it in a separate window then copy and paste commands into an interactive shell one by one. Below are instructions for creating a shell with Docker on your computer or Singularity on the Farnam cluster. 
+The script in this directory (`alignment.sh`) should run on its own as long as you create a directory for it called `/data/eeb723-seqaln`. However, we recommend that you open it in a separate window then copy and paste commands into an interactive shell one by one. Below are instructions for creating a shell using Singularity on the Farnam cluster, or with Docker on your computer. 
 
 ## Singularity on Farnam
 
