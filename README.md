@@ -1,7 +1,5 @@
 
-# Running the exercise
 
-The script in this directory (`alignment.sh`) should run on its own as long as you create a directory for it called `/data/eeb723-seqaln`. However, we recommend that you open it in a separate window then copy and paste commands into an interactive shell one by one. Below are instructions for creating a shell using Singularity on the Farnam cluster, or with Docker on your computer. 
 
 ## Singularity on Farnam
 
@@ -27,9 +25,32 @@ mkdir -p /gpfs/ysm/project/eeb723/${USER}/eeb723-seqaln
 singularity shell --shell /bin/bash -B /gpfs/ysm/project/eeb723/${USER}/eeb723-seqaln:/data/eeb723-seqaln docker://eeb723/course_docker
 ```
 
-## Docker
+This completes the assigned exercise.
 
-### Windows
+## Additional information
+
+This section contains additional information that is not part of the assignment,
+but that may be useful for context and your own future analyses.
+
+### Running the exercise as a script
+
+Above you coped and pasted the commands into an interactive shell one by one.
+This is good to understand the exercise and is the way you may do some preliminary
+analyses, but usually you will run analyses as scripts. This requires less
+user intervention, is reproducible, and is less prone to human error.
+
+The analyses presented here can be run as a script. First, make sure an output
+folder called `/data/eeb723-seqaln` exists. Then from an interactive shell,
+instead of copying and pasting the commands `cd` to this directory and
+run the command `bash alignment.sh`.
+
+### Running the analyses on other computers with Docker
+
+These analyses can be run on computers other than the cluster from within a
+docker container. Here are some instructions for how to do this on a couple
+different operating systems.
+
+#### Windows
 
 Open a new command prompt by typing <kbd><img src=http://i.stack.imgur.com/B8Zit.png></kbd>+<kbd>R</kbd>, then enter `cmd` into the prompt and click OK
 
@@ -46,7 +67,7 @@ docker run --rm -ti -v %USERPROFILE%\Desktop\eeb723-seqaln:/data/eeb723-seqaln e
 ```
 
 
-### macOS/linux
+#### macOS/linux
 
 Open a new Terminal window (on a mac start up Terminal.app), then enter the following to set up a directory to keep files generated from our analyses on your computer.
 
