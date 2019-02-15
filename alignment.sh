@@ -6,7 +6,7 @@ export PROJ_DIR=/data/eeb723-seqaln
 ## Genome reference
 # https://www.ncbi.nlm.nih.gov/genome/genomes/461
 
-# chose one, 
+# chose one,
 # ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/900/604/845/GCA_900604845.1_TTHNAR1
 
 
@@ -18,7 +18,7 @@ mkdir -p $PROJ_DIR/genome && cd $PROJ_DIR/genome
 wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/900/604/845/GCA_900604845.1_TTHNAR1/*
 
 # unpack genome DNA sequence & index
-gunzip ./GCA_900604845.1_TTHNAR1_genomic.fna.gz 
+gunzip ./GCA_900604845.1_TTHNAR1_genomic.fna.gz
 ln -s GCA_900604845.1_TTHNAR1_genomic.fna Thermus_thermophilus_TTHNAR1.fa
 
 # samtools index genome
@@ -63,7 +63,7 @@ bowtie2 -x genome/Thermus_thermophilus_TTHNAR1 \
     | samtools view -hb - | samtools sort -l 5 -o alignment/${SRR}.bam
 samtools index alignment/${SRR}.bam
 
-# text view alignment with 
+# text view alignment with
 # samtools tview alignment/SRR5324768.bam genome/Thermus_thermophilus_TTHNAR1.fa
 # type ? for help, q to quit
 
@@ -75,7 +75,7 @@ samtools index alignment/${SRR}.bam
 # Warning! This step will take seveeral minutes (5-20) depending on your hardware
 
 cd $PROJ_DIR
-mkdir -p variants 
+mkdir -p variants
 
 gatk --java-options "-Xmx4g" HaplotypeCaller  \
    --reference genome/Thermus_thermophilus_TTHNAR1.fa \

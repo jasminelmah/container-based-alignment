@@ -69,10 +69,40 @@ mkdir -p /gpfs/ysm/project/eeb723/${USER}/eeb723-seqaln
 singularity shell --shell /bin/bash -B /gpfs/ysm/project/eeb723/${USER}/eeb723-seqaln:/data/eeb723-seqaln docker://eeb723/course_docker
 ```
 
+If this works you will see output something like the following, which returns the prompt to you:
+
+``` bash
+Docker image path: index.docker.io/eeb723/course_docker:latest
+Cache folder set to /gpfs/ysm/home/cwd7/.singularity/docker
+[14/14] |===================================| 100.0%
+Creating container runtime...
+Exploding layer: sha256:54f7e8ac135a5f502a6ee9537ef3d64b1cd2fa570dc0a40b4d3b6f7ac81e7486.tar.gz
+Exploding layer: sha256:ba93dfd291824441baa6a31fc8c4af5bb4f83c921d8ff3945b862407a14a3b3b.tar.gz
+Exploding layer: sha256:c03738a8c9402d89e35cfc72c1ec9c1b86a0144ef256e27cf8a456a576c29c51.tar.gz
+Exploding layer: sha256:ad62af4c2658eadf72867000904bd4b67ef763ca9d8ea3a33453642dfa3dcec8.tar.gz
+Exploding layer: sha256:119baedb21a9b4ed9ede5d992f65007514bdc7d6bbf526d5a5c69281ee350618.tar.gz
+Exploding layer: sha256:ea916453187e5d163e84363c0bca38c45514044b8461615778698de7e804fff4.tar.gz
+Exploding layer: sha256:c1179c6680f5ee147fa3148b4b47277c4091e5407fd6dd7ae767e0ae98a3ba90.tar.gz
+Exploding layer: sha256:8a0c826d2f5d303eb6b3caa9b46e79bdb3d6eafa90cf32aed4035f09f958d3a9.tar.gz
+Exploding layer: sha256:882c188f4454c677b2e5efcd159c33b8fe8941355fdde0c6e0171aedc961bce2.tar.gz
+Exploding layer: sha256:c797c633effb523ebfce4b651d3e8cbdc155fdfee8bdc7f1658d9be0a63dca97.tar.gz
+Exploding layer: sha256:d753068e6af0d8d67eac8077397ec397544e5b3533c4ead1c046db471b402bea.tar.gz
+Exploding layer: sha256:72376858bc9a87482269bc49fdecf7b65f3eedd76e5f45868b4c1df0dbe54a40.tar.gz
+Exploding layer: sha256:37c53758a333554d0baeb574acfc4ea24eb870373db60eeb931fe75b8c10f93e.tar.gz
+Exploding layer: sha256:53607fb60a0f35c9434818dc4d332c2eb9110e8a99e54c2f994177c3a92b1b54.tar.gz
+Exploding layer: sha256:c6abb519bd9e4ac6c817d671248885a6463115f62c47db48398d9b05cd2437f9.tar.gz
+Singularity: Invoking an interactive shell within container...
+
+cwd7@c13n03:~$
+```
+
+You get the prompt to the interactive node back, but all the tools from the container are
+now available to you.
+
 ### Run the analyses
 
 Copy and paste the commands one by one from [alignment.sh](https://github.com/Yale-EEB723/container-based-alignment/blob/master/alignment.sh)
-to run them in the container. You don't need to run the lines that are blank or
+and run them at the prompt you got above. You don't need to run the lines that are blank or
 that start with `#` (these are comments to explain the contents of the file to
 humans).
 
@@ -114,9 +144,6 @@ in your GitHub Username).
 Click the "New pull request" button. Then click the "Create pull request" button
 and submit the pull request. This will notify the instructor that you have
 submitted the assignment.
-
-
-
 
 *This completes the assigned exercise.*
 
